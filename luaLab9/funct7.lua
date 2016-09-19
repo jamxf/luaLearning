@@ -21,8 +21,8 @@ itemCount = #list
 hasChanged = true
 
 repeat
-    hasChanged = false
-    itemCount=itemCount - 1
+  hasChanged = false
+  itemCount=itemCount - 1
     for i = 1, itemCount do
       if list[i] > list[i + 1] then
           temp = list[i]
@@ -33,7 +33,7 @@ repeat
     end
 until hasChanged == false
 
-
+print("Array List: ")
 for i = 1,#list,1 do
   io.write(newlist[i].." ")
 end
@@ -49,6 +49,7 @@ for i = 1,#list,1 do
   end
 end
 
+print("Index List: ")
 for i = 1,#indexlist,1 do
   io.write(indexlist[i].." ")
 end
