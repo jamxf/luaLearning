@@ -2,7 +2,7 @@ print("\n")
 
 list = {}
 
-io.write("Enter a number: ")
+io.write("Enter a number rebecca: ")
 b = io.read()
 
 for i = 1,b,1 do
