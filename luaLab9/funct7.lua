@@ -13,10 +13,12 @@ list = val1
 indexlist = {}
 newlist = {}
 
+--copy values from list to newlist--
 for i = 1,#list,1 do
   newlist[i] = list[i]
 end
 
+--bubble sort list--
 itemCount = #list
 hasChanged = true
 
@@ -33,11 +35,16 @@ repeat
     end
 until hasChanged == false
 
+--print newlist
+
 print("Array List: ")
 for i = 1,#list,1 do
   io.write(newlist[i].." ")
 end
 print("\n")
+
+--[[check for matches of sorted list indeces against list values
+      and write these values to indexlist]]--
 
 x=1
 for i = 1,#list,1 do
