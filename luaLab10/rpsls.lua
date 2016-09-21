@@ -20,9 +20,9 @@
 
 print("\n")
 math.randomseed(os.time())
-names = {[1])="paper",[2]="scissors",[3]="spock",[4]="lizard",[5]="rock"}
+names = {[1]="paper",[2]="scissors",[3]="spock",[4]="lizard",[5]="rock"}
 numbers = {["paper"]=1,["scissors"]=2,["spock"]=3,["lizard"]=4,["rock"]=5}
-victories = {[1]="crushes",[2]="covers",[3]="cuts",[4]="disproves",[5]="eats",[6]="decapitates",[7]="poisons",[8]="smashes",[9]="vaporizes"}
+victories = {[12]="poisons",[21]="poisons",[13]="smashes",[31]="smashes",[14]="disproves",[41]="disproves",[23]="decapitates",[32]="decapitates",[15]="vaporizes",[51]="vaporizes",[24]="eats",[42]="eats",[25]="crushes",[52]="crushes",[35]="crushes",[53]="crushes",[34]="cuts",[43]="cuts",[45]="covers",[54]="covers"}
 gameOver = false
 computerNumber = nil
 computerName = nil
@@ -35,11 +35,13 @@ function printResult(val1,val2)
 	if((val2-val1)%5 == 0) then
   	print("Draw!")
 	    elseif((((val2-val1)%5)%2) == 0)then
-		    	print(playerName.." beats "..computerName.."\n")
+					print(playerName.." "..victories[numMethod].." "..computerName)
+		    	--print(playerName.." beats "..computerName.."\n")
 					print("Player Win!")
 					gamestate = 1
 		    else
-						print(computerName.." beats "..playerName.."\n")
+						print(computerName.." "..victories[numMethod].." "..playerName)
+						--print(computerName.." beats "..playerName.."\n")
 		    		print("Computer Win!")
   end
 return gamestate
@@ -56,6 +58,9 @@ while( gameOver == false	) do
 			playerNumber = numbers[playerName]
 
 	print("\n".."Player chose "..playerName.." and computer chose "..computerName.."\n")
+
+	method = playerNumber..computerNumber
+	numMethod = tonumber(method)
 
 	printResult(playerNumber,computerNumber)
 
